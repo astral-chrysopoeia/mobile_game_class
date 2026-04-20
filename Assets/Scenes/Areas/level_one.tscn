@@ -76,10 +76,11 @@ position = Vector2(184, -96)
 pos1 = Vector2(184, -96)
 pos2 = Vector2(184, -144)
 
-[node name="Door" parent="WinCondition" parent_id_path=PackedInt32Array(1099438859) index="0" unique_id=213066851 node_paths=PackedStringArray("key") instance=ExtResource("2_gsb1q")]
-destination = "level_two"
-key = NodePath("../Key")
-
-[node name="Key" parent="WinCondition" parent_id_path=PackedInt32Array(1099438859) index="1" unique_id=961668920 node_paths=PackedStringArray("door") instance=ExtResource("3_y3opo")]
+[node name="Key" parent="WinCondition" parent_id_path=PackedInt32Array(1099438859) index="0" unique_id=961668920 node_paths=PackedStringArray("door") instance=ExtResource("3_y3opo")]
 position = Vector2(-16, -104)
 door = NodePath("../Door")
+
+[node name="Door" parent="WinCondition" parent_id_path=PackedInt32Array(1099438859) index="1" unique_id=213066851 node_paths=PackedStringArray("key", "level") instance=ExtResource("2_gsb1q")]
+destination = "level_two"
+key = NodePath("../Key")
+level = NodePath("../..")

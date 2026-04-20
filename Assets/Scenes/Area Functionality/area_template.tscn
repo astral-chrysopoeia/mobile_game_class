@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bdlof44q0jpuc" path="res://Assets/Sprites/back_wall_v2.png" id="1_2pegy"]
 [ext_resource type="Texture2D" uid="uid://cm5girwud5xbv" path="res://Assets/Sprites/terrain_tiles_v2.png" id="1_3uyhe"]
+[ext_resource type="Script" uid="uid://df3302jqw2js4" path="res://Assets/Scripts/area_template.gd" id="1_dp7b8"]
 [ext_resource type="PackedScene" uid="uid://cki5os8l3leyu" path="res://Assets/Scenes/Area Functionality/respawn_bound.tscn" id="3_2pegy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dp7b8"]
@@ -458,6 +459,7 @@ terrain_set_0/terrain_0/color = Color(0.110674, 0.23258, 0.596614, 1)
 sources/2 = SubResource("TileSetAtlasSource_8wi1m")
 
 [node name="AreaTemplate" type="Node2D" unique_id=387057993]
+script = ExtResource("1_dp7b8")
 
 [node name="Terrain" type="Node2D" parent="." unique_id=1202160038]
 

@@ -8,6 +8,8 @@ var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
 
+@export var spawn_pos := Vector2.ZERO
+
 @onready var joystick_controls: VirtualJoystick = $Camera2D/CanvasLayer/JoystickControls
 @onready var button_controls: Node2D = $Camera2D/CanvasLayer/ButtonControls
 @onready var jump_button: TouchScreenButton = $Camera2D/CanvasLayer/JumpButton
@@ -60,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func to_spawn():
-	transform.origin = GameManager.spawn_pos
+	transform.origin = spawn_pos
 
 func switch_controls():
 	match active_controls:

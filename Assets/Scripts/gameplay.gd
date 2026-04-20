@@ -1,18 +1,17 @@
-extends Node
+extends Node2D
 
 var area_path = "res://Assets/Scenes/Areas/"
 var spawn_pos: Vector2 = Vector2.ZERO
-var player : PlayerController
-var area_container : Node2D
+@onready var player: PlayerController = $Player
+@onready var area_container: Node2D = $Area
 var is_paused : bool = false
 var current_level : String
 
+@export var start_level := "tutorial_level"
+
 func _ready():
-	process_mode = Node.PROCESS_MODE_ALWAYS
-	player = get_tree().get_first_node_in_group("player")
-	area_container = get_tree().get_first_node_in_group("area_container")
-	to_area("tutorial_level")
-	current_level = "tutorial_level"
+	to_area(start_level)
+	current_level = start_level
 
 func to_area(destination: String):
 	var full_path = area_path + destination + ".tscn"
@@ -26,5 +25,6 @@ func to_area(destination: String):
 	#set up new scene
 	var instance = scene.instantiate()
 	area_container.add_child(instance)
+	instance.gameplay_manager = self
 	player.to_spawn()
 	current_level = destination

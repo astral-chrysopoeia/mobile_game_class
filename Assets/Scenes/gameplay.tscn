@@ -2,12 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dmd4a1ys4wxe1" path="res://Assets/Scenes/player.tscn" id="1_0ti3t"]
 [ext_resource type="PackedScene" uid="uid://ddyp1fne0uwms" path="res://Assets/Scenes/pause_menu.tscn" id="1_6k5g7"]
+[ext_resource type="Script" uid="uid://bc4j10ciaoga8" path="res://Assets/Scripts/gameplay.gd" id="1_j02rm"]
 
 [node name="Gameplay" type="Node2D" unique_id=1827625880]
+script = ExtResource("1_j02rm")
 
 [node name="Player" parent="." unique_id=2015232723 instance=ExtResource("1_0ti3t")]
 
 [node name="Area" type="Node2D" parent="." unique_id=421306157 groups=["area_container"]]
 
-[node name="PauseMenu" parent="." unique_id=415842597 node_paths=PackedStringArray("player") instance=ExtResource("1_6k5g7")]
+[node name="PauseMenu" parent="." unique_id=415842597 node_paths=PackedStringArray("player", "gameplay_manager") instance=ExtResource("1_6k5g7")]
 player = NodePath("../Player")
+gameplay_manager = NodePath("..")

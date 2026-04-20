@@ -19,11 +19,6 @@ run/main_scene="uid://bmwgxd24b0w8g"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-GameManager="*res://Assets/Scripts/game_manager.gd"
-PlayerStats="*res://Assets/Scripts/player_stats.gd"
-
 [display]
 
 window/size/viewport_width=2400

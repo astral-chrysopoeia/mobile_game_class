@@ -7,6 +7,7 @@ class_name AreaExit
 @export var sprite : Sprite2D
 @export var locked = false
 @export var key : Key
+@export var level : Node2D
 @onready var label: Label = $Label
 
 var can_interact = false
@@ -42,5 +43,6 @@ func _on_body_exited(body: Node2D) -> void:
 		label.hide()
 
 func exit_area():
-	GameManager.spawn_pos = Vector2(destinationX, destinationY)
-	GameManager.to_area(destination)
+	pass
+	level.gameplay_manager.player.spawn_pos = Vector2(destinationX, destinationY)
+	level.gameplay_manager.to_area(destination)

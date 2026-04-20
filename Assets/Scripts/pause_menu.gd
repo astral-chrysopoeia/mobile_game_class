@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @export var player : PlayerController
+@export var gameplay_manager : Node2D
 
 @onready var switch_controls_text: Label = $SwitchControls/SwitchControlsText
 
@@ -19,7 +20,7 @@ func _input(event: InputEvent) -> void:
 			get_tree().paused = true
 	if event.is_action_pressed("reset_level"):
 		if get_tree().paused:
-			GameManager.to_area(GameManager.current_level)
+			gameplay_manager.to_area(gameplay_manager.current_level)
 			visible = false
 			get_tree().paused = false
 	if event.is_action_pressed("quit_game"):
