@@ -1,0 +1,314 @@
+[gd_scene format=3 uid="uid://dmd4a1ys4wxe1"]
+
+[ext_resource type="Texture2D" uid="uid://qm0giobubkki" path="res://Assets/Sprites/player.png" id="1_6cd4h"]
+[ext_resource type="Script" uid="uid://8t8ufebgin0i" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
+[ext_resource type="Script" uid="uid://bxjoydvrx1fm5" path="res://Assets/Scripts/player_animator.gd" id="2_38rej"]
+[ext_resource type="Script" uid="uid://cnruk1f3oqi51" path="res://addons/virtual_joystick/virtual_joystick.gd" id="3_c3tg1"]
+[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="4_lerqx"]
+[ext_resource type="Texture2D" uid="uid://ch3osj8mn0sdb" path="res://Assets/Sprites/buttons.png" id="4_t1xgp"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="5_jp3cw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23lac"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(72, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3t24"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(72, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3tg1"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lerqx"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp3cw"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(0, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecf78"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vy5gb"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(36, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsrmw"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(36, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8kuu"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv74q"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(108, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qq7w"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(108, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcr7l"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1xgp"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(144, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3tg1"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(144, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lerqx"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecf78"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(180, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8kuu"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(180, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv74q"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_38rej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_w3t24"]
+resource_name = "fall"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 48, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_7dd06"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(64, 0, 16, 16), Rect2(80, 0, 16, 16), Rect2(96, 0, 16, 16), Rect2(96, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_23lac"]
+resource_name = "jump"
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 32, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_t1xgp"]
+resource_name = "move"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 16, 16, 16), Rect2(16, 16, 16, 16), Rect2(32, 16, 16, 16), Rect2(48, 16, 16, 16), Rect2(0, 16, 16, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t1xgp"]
+_data = {
+&"RESET": SubResource("Animation_38rej"),
+&"fall": SubResource("Animation_w3t24"),
+&"idle": SubResource("Animation_7dd06"),
+&"jump": SubResource("Animation_23lac"),
+&"move": SubResource("Animation_t1xgp")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dd06"]
+radius = 4.0
+height = 14.0
+
+[node name="Player" type="CharacterBody2D" unique_id=144101170 groups=["player"]]
+collision_mask = 1792
+script = ExtResource("1_7dd06")
+speed = 4.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1011011469]
+z_index = 10
+offset = Vector2(0, -24)
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=2026174620]
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer" unique_id=1031478568]
+visible = false
+offset_right = 1372.0
+offset_bottom = 618.0
+color = Color(1, 1, 1, 0.20392157)
+
+[node name="MoveLeftButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=1747610154]
+visible = false
+position = Vector2(32, 480)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_23lac")
+texture_pressed = SubResource("AtlasTexture_w3t24")
+shape = SubResource("RectangleShape2D_c3tg1")
+action = "move_left"
+
+[node name="MoveRightButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=827425885]
+visible = false
+position = Vector2(256, 480)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_lerqx")
+texture_pressed = SubResource("AtlasTexture_jp3cw")
+shape = SubResource("RectangleShape2D_ecf78")
+action = "move_right"
+
+[node name="JumpButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=423887549]
+position = Vector2(1024, 448)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_vy5gb")
+texture_pressed = SubResource("AtlasTexture_rsrmw")
+shape = SubResource("RectangleShape2D_o8kuu")
+action = "jump"
+
+[node name="MoveDownButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=1813928419]
+visible = false
+position = Vector2(144, 480)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_xv74q")
+texture_pressed = SubResource("AtlasTexture_8qq7w")
+shape = SubResource("RectangleShape2D_tcr7l")
+action = "move_down"
+
+[node name="InteractButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=335607359]
+position = Vector2(1184, 448)
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_t1xgp")
+texture_pressed = SubResource("AtlasTexture_c3tg1")
+shape = SubResource("RectangleShape2D_lerqx")
+action = "interact"
+
+[node name="PauseButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=1931401800]
+position = Vector2(40, 32)
+scale = Vector2(2, 2)
+texture_normal = SubResource("AtlasTexture_ecf78")
+texture_pressed = SubResource("AtlasTexture_o8kuu")
+shape = SubResource("RectangleShape2D_xv74q")
+action = "pause"
+
+[node name="Virtual Joystick" type="Control" parent="Camera2D/CanvasLayer" unique_id=771017166]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -304.0
+offset_right = 300.0
+offset_bottom = -4.0
+grow_vertical = 0
+script = ExtResource("3_c3tg1")
+joystick_mode = 1
+action_left = "move_left"
+action_right = "move_right"
+action_up = "jump"
+action_down = "move_down"
+
+[node name="Base" type="TextureRect" parent="Camera2D/CanvasLayer/Virtual Joystick" unique_id=1408096601]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -102.0
+offset_right = 98.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+mouse_force_pass_scroll_events = false
+texture = ExtResource("4_lerqx")
+stretch_mode = 5
+
+[node name="Tip" type="TextureRect" parent="Camera2D/CanvasLayer/Virtual Joystick/Base" unique_id=2039845266]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("5_jp3cw")
+stretch_mode = 5
+
+[node name="PlayerAnimator" type="Node2D" parent="." unique_id=1453078786 node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
+script = ExtResource("2_38rej")
+player_controller = NodePath("..")
+animation_player = NodePath("AnimationPlayer")
+sprite = NodePath("Sprite2D")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerAnimator" unique_id=2128249633]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_t1xgp")
+autoplay = &"idle"
+speed_scale = 1.25
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerAnimator" unique_id=1865560012]
+position = Vector2(0, -8)
+texture = ExtResource("1_6cd4h")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1023567138]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_7dd06")

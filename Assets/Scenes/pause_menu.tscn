@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://ddyp1fne0uwms"]
+
+[ext_resource type="Script" uid="uid://do4haf4ad0q2j" path="res://Assets/Scripts/pause_menu.gd" id="1_6udtp"]
+[ext_resource type="Texture2D" uid="uid://ch3osj8mn0sdb" path="res://Assets/Sprites/buttons.png" id="2_6udtp"]
+[ext_resource type="FontFile" uid="uid://ds2lf2wy6wtd5" path="res://Assets/Fonts/Kenney Mini.ttf" id="2_dadan"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dadan"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(216, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvkuv"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(216, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48c7y"]
+size = Vector2(32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dadan"]
+font = ExtResource("2_dadan")
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7po0"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgy2g"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(288, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxc5f"]
+size = Vector2(32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kvkuv"]
+font = ExtResource("2_dadan")
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lvdy"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(252, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nmhk"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(252, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdkeg"]
+size = Vector2(32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_48c7y"]
+font = ExtResource("2_dadan")
+font_size = 32
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=2045722849]
+script = ExtResource("1_6udtp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1947507614]
+offset_right = 1372.0
+offset_bottom = 618.0
+color = Color(0, 0, 0, 0.607843)
+
+[node name="ResumeButton" type="TouchScreenButton" parent="." unique_id=597584738]
+position = Vector2(522, 141)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_dadan")
+texture_pressed = SubResource("AtlasTexture_kvkuv")
+shape = SubResource("RectangleShape2D_48c7y")
+action = "pause"
+
+[node name="ResumeText" type="Label" parent="." unique_id=2137641399]
+offset_left = 634.0
+offset_top = 169.0
+offset_right = 850.0
+offset_bottom = 209.0
+text = "Resume Game"
+label_settings = SubResource("LabelSettings_dadan")
+
+[node name="ResetLevelButton" type="TouchScreenButton" parent="." unique_id=174531796]
+position = Vector2(522, 261)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_d7po0")
+texture_pressed = SubResource("AtlasTexture_tgy2g")
+shape = SubResource("RectangleShape2D_qxc5f")
+action = "reset_level"
+
+[node name="ResetText" type="Label" parent="." unique_id=1407245674]
+offset_left = 634.0
+offset_top = 289.0
+offset_right = 830.0
+offset_bottom = 329.0
+text = "Reset Level"
+label_settings = SubResource("LabelSettings_kvkuv")
+
+[node name="QuitGameButton" type="TouchScreenButton" parent="." unique_id=296861473]
+position = Vector2(522, 381)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_1lvdy")
+texture_pressed = SubResource("AtlasTexture_6nmhk")
+shape = SubResource("RectangleShape2D_hdkeg")
+action = "quit_game"
+
+[node name="QuitText" type="Label" parent="." unique_id=1392933439]
+offset_left = 634.0
+offset_top = 409.0
+offset_right = 790.0
+offset_bottom = 449.0
+text = "Quit Game"
+label_settings = SubResource("LabelSettings_48c7y")
