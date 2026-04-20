@@ -8,28 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://ch3osj8mn0sdb" path="res://Assets/Sprites/buttons.png" id="4_t1xgp"]
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="5_jp3cw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_23lac"]
-atlas = ExtResource("4_t1xgp")
-region = Rect2(72, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w3t24"]
-atlas = ExtResource("4_t1xgp")
-region = Rect2(72, 36, 32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3tg1"]
-size = Vector2(32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lerqx"]
-atlas = ExtResource("4_t1xgp")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jp3cw"]
-atlas = ExtResource("4_t1xgp")
-region = Rect2(0, 36, 32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecf78"]
-size = Vector2(32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_vy5gb"]
 atlas = ExtResource("4_t1xgp")
 region = Rect2(36, 0, 32, 32)
@@ -39,17 +17,6 @@ atlas = ExtResource("4_t1xgp")
 region = Rect2(36, 36, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8kuu"]
-size = Vector2(32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xv74q"]
-atlas = ExtResource("4_t1xgp")
-region = Rect2(108, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8qq7w"]
-atlas = ExtResource("4_t1xgp")
-region = Rect2(108, 36, 32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcr7l"]
 size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1xgp"]
@@ -72,6 +39,39 @@ atlas = ExtResource("4_t1xgp")
 region = Rect2(180, 36, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xv74q"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23lac"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(72, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3t24"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(72, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3tg1"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lerqx"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp3cw"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(0, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecf78"]
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv74q"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(108, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qq7w"]
+atlas = ExtResource("4_t1xgp")
+region = Rect2(108, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcr7l"]
 size = Vector2(32, 32)
 
 [sub_resource type="Animation" id="Animation_38rej"]
@@ -189,40 +189,13 @@ offset_right = 1372.0
 offset_bottom = 618.0
 color = Color(1, 1, 1, 0.20392157)
 
-[node name="MoveLeftButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=1747610154]
-visible = false
-position = Vector2(32, 480)
-scale = Vector2(3, 3)
-texture_normal = SubResource("AtlasTexture_23lac")
-texture_pressed = SubResource("AtlasTexture_w3t24")
-shape = SubResource("RectangleShape2D_c3tg1")
-action = "move_left"
-
-[node name="MoveRightButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=827425885]
-visible = false
-position = Vector2(256, 480)
-scale = Vector2(3, 3)
-texture_normal = SubResource("AtlasTexture_lerqx")
-texture_pressed = SubResource("AtlasTexture_jp3cw")
-shape = SubResource("RectangleShape2D_ecf78")
-action = "move_right"
-
 [node name="JumpButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=423887549]
-position = Vector2(1024, 448)
-scale = Vector2(4, 4)
+position = Vector2(144, 368.00003)
+scale = Vector2(3, 3)
 texture_normal = SubResource("AtlasTexture_vy5gb")
 texture_pressed = SubResource("AtlasTexture_rsrmw")
 shape = SubResource("RectangleShape2D_o8kuu")
 action = "jump"
-
-[node name="MoveDownButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=1813928419]
-visible = false
-position = Vector2(144, 480)
-scale = Vector2(3, 3)
-texture_normal = SubResource("AtlasTexture_xv74q")
-texture_pressed = SubResource("AtlasTexture_8qq7w")
-shape = SubResource("RectangleShape2D_tcr7l")
-action = "move_down"
 
 [node name="InteractButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer" unique_id=335607359]
 position = Vector2(1184, 448)
@@ -240,7 +213,7 @@ texture_pressed = SubResource("AtlasTexture_o8kuu")
 shape = SubResource("RectangleShape2D_xv74q")
 action = "pause"
 
-[node name="Virtual Joystick" type="Control" parent="Camera2D/CanvasLayer" unique_id=771017166]
+[node name="JoystickControls" type="Control" parent="Camera2D/CanvasLayer" unique_id=771017166]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -256,7 +229,7 @@ action_right = "move_right"
 action_up = "jump"
 action_down = "move_down"
 
-[node name="Base" type="TextureRect" parent="Camera2D/CanvasLayer/Virtual Joystick" unique_id=1408096601]
+[node name="Base" type="TextureRect" parent="Camera2D/CanvasLayer/JoystickControls" unique_id=1408096601]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -274,7 +247,7 @@ mouse_force_pass_scroll_events = false
 texture = ExtResource("4_lerqx")
 stretch_mode = 5
 
-[node name="Tip" type="TextureRect" parent="Camera2D/CanvasLayer/Virtual Joystick/Base" unique_id=2039845266]
+[node name="Tip" type="TextureRect" parent="Camera2D/CanvasLayer/JoystickControls/Base" unique_id=2039845266]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -290,6 +263,32 @@ grow_vertical = 2
 pivot_offset = Vector2(50, 50)
 texture = ExtResource("5_jp3cw")
 stretch_mode = 5
+
+[node name="ButtonControls" type="Node2D" parent="Camera2D/CanvasLayer" unique_id=462008600]
+
+[node name="MoveLeftButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer/ButtonControls" unique_id=1747610154]
+position = Vector2(32, 480)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_23lac")
+texture_pressed = SubResource("AtlasTexture_w3t24")
+shape = SubResource("RectangleShape2D_c3tg1")
+action = "move_left"
+
+[node name="MoveRightButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer/ButtonControls" unique_id=827425885]
+position = Vector2(256, 480)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_lerqx")
+texture_pressed = SubResource("AtlasTexture_jp3cw")
+shape = SubResource("RectangleShape2D_ecf78")
+action = "move_right"
+
+[node name="MoveDownButton" type="TouchScreenButton" parent="Camera2D/CanvasLayer/ButtonControls" unique_id=1813928419]
+position = Vector2(144, 480)
+scale = Vector2(3, 3)
+texture_normal = SubResource("AtlasTexture_xv74q")
+texture_pressed = SubResource("AtlasTexture_8qq7w")
+shape = SubResource("RectangleShape2D_tcr7l")
+action = "move_down"
 
 [node name="PlayerAnimator" type="Node2D" parent="." unique_id=1453078786 node_paths=PackedStringArray("player_controller", "animation_player", "sprite")]
 script = ExtResource("2_38rej")

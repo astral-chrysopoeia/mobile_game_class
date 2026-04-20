@@ -6,9 +6,9 @@ extends Node2D
 
 func _process(_delta):
 	#flips the character sprite
-	if player_controller.direction == 1:
+	if player_controller.velocity.x > 0:
 		sprite.flip_h = false
-	elif player_controller.direction == -1:
+	elif player_controller.velocity.x < 0:
 		sprite.flip_h = true
 	#plays the movement animation
 	if abs(player_controller.velocity.x) > 0.0:

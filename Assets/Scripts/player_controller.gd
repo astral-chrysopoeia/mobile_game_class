@@ -8,9 +8,30 @@ var speed_multiplier = 30.0
 var jump_multiplier = -30.0
 var direction = 0
 
+@onready var joystick_controls: VirtualJoystick = $Camera2D/CanvasLayer/JoystickControls
+@onready var button_controls: Node2D = $Camera2D/CanvasLayer/ButtonControls
+@onready var jump_button: TouchScreenButton = $Camera2D/CanvasLayer/JumpButton
+@export var active_controls := ControlScheme.JOYSTICK
+enum ControlScheme {
+	JOYSTICK, #use joystick controls
+	BUTTON    #use button controls
+}
+
 func _ready():
-	#process_mode = Node.PROCESS_MODE_ALWAYS
 	to_spawn()
+	match active_controls:
+		ControlScheme.JOYSTICK:
+			joystick_controls.visible = true
+			button_controls.visible = false
+			jump_button.scale = Vector2(4,4)
+			jump_button.transform.origin = Vector2(1024.0,448.0)
+			joystick_controls.active = true
+		ControlScheme.BUTTON:
+			button_controls.visible = true
+			joystick_controls.visible = false
+			jump_button.scale = Vector2(3,3)
+			jump_button.transform.origin = Vector2(144.0,368.0)
+			joystick_controls.active = false
 
 func _input(event):
 	# Handle jump.
@@ -40,3 +61,22 @@ func _physics_process(delta: float) -> void:
 
 func to_spawn():
 	transform.origin = GameManager.spawn_pos
+
+func switch_controls():
+	match active_controls:
+		ControlScheme.JOYSTICK:
+			button_controls.show()
+			joystick_controls.hide()
+			jump_button.scale = Vector2(3,3)
+			jump_button.transform.origin = Vector2(144.0,368.0)
+			joystick_controls.active = false
+			active_controls = ControlScheme.BUTTON
+			return
+		ControlScheme.BUTTON:
+			joystick_controls.show()
+			button_controls.hide()
+			jump_button.scale = Vector2(4,4)
+			jump_button.transform.origin = Vector2(1024.0,448.0)
+			joystick_controls.active = true
+			active_controls = ControlScheme.JOYSTICK
+			return

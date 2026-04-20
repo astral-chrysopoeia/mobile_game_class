@@ -2,6 +2,8 @@ class_name VirtualJoystick
 
 extends Control
 
+@export var active := true
+
 ## A simple virtual joystick for touchscreens, with useful options.
 ## Github: https://github.com/MarcoFazioRandom/Virtual-Joystick-Godot
 
@@ -77,6 +79,8 @@ func _ready() -> void:
 		hide()
 
 func _input(event: InputEvent) -> void:
+	if !active:
+		return
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			if _is_point_inside_joystick_area(event.position) and _touch_index == -1:
@@ -146,19 +150,33 @@ func _update_joystick(touch_position: Vector2) -> void:
 			Input.action_release(action_left)
 		if output.x <= 0 and Input.is_action_pressed(action_right):
 			Input.action_release(action_right)
-		if output.y >= 0 and Input.is_action_pressed(action_up):
-			Input.action_release(action_up)
-		if output.y <= 0 and Input.is_action_pressed(action_down):
-			Input.action_release(action_down)
+		if output.y >= -0.5 and Input.is_action_pressed(action_up):
+			var up_event = InputEventAction.new()
+			up_event.action = action_up
+			up_event.pressed = false
+			Input.parse_input_event(up_event)
+		if output.y <= 0.5 and Input.is_action_pressed(action_down):
+			var down_event = InputEventAction.new()
+			down_event.action = action_down
+			down_event.pressed = false
+			Input.parse_input_event(down_event)
 		# Press actions
 		if output.x < 0:
 			Input.action_press(action_left, -output.x)
 		if output.x > 0:
 			Input.action_press(action_right, output.x)
-		if output.y < 0:
-			Input.action_press(action_up, -output.y)
-		if output.y > 0:
-			Input.action_press(action_down, output.y)
+		if output.y < -0.5:
+			var up_event = InputEventAction.new()
+			up_event.action = action_up
+			up_event.pressed = true
+			up_event.strength = -output.y
+			Input.parse_input_event(up_event)
+		if output.y > 0.5:
+			var down_event = InputEventAction.new()
+			down_event.action = action_down
+			down_event.pressed = true
+			down_event.strength = output.y
+			Input.parse_input_event(down_event)
 
 func _reset():
 	is_pressed = false
@@ -171,4 +189,15 @@ func _reset():
 	if use_input_actions:
 		for action in [action_left, action_right, action_down, action_up]:
 			if Input.is_action_pressed(action):
-				Input.action_release(action)
+				if action == action_down:
+					var down_event = InputEventAction.new()
+					down_event.action = action_down
+					down_event.pressed = false
+					Input.parse_input_event(down_event)
+				elif action == action_up:
+					var up_event = InputEventAction.new()
+					up_event.action = action_up
+					up_event.pressed = false
+					Input.parse_input_event(up_event)
+				else:
+					Input.action_release(action)
