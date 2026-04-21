@@ -34,6 +34,36 @@ size = Vector2(32, 32)
 font = ExtResource("2_dadan")
 font_size = 32
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdkeg"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(360, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taxb1"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(360, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h54ie"]
+size = Vector2(32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d7po0"]
+font = ExtResource("2_dadan")
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l3h0"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(396, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uynk4"]
+atlas = ExtResource("2_6udtp")
+region = Rect2(396, 36, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55hg2"]
+size = Vector2(32, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tgy2g"]
+font = ExtResource("2_dadan")
+font_size = 32
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lvdy"]
 atlas = ExtResource("2_6udtp")
 region = Rect2(252, 0, 32, 32)
@@ -67,58 +97,90 @@ font_size = 32
 [node name="PauseMenu" type="CanvasLayer" unique_id=2045722849]
 script = ExtResource("1_6udtp")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1947507614]
+[node name="ScreenSize" type="ColorRect" parent="." unique_id=1947507614]
 offset_right = 1372.0
 offset_bottom = 618.0
 color = Color(0, 0, 0, 0.607843)
 
 [node name="MenuOptions" type="Node2D" parent="." unique_id=2041529964]
-position = Vector2(275, 141)
+position = Vector2(275, 117)
 
 [node name="ResumeButton" type="TouchScreenButton" parent="MenuOptions" unique_id=597584738]
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_dadan")
 texture_pressed = SubResource("AtlasTexture_kvkuv")
 shape = SubResource("RectangleShape2D_48c7y")
 action = "pause"
 
 [node name="ResumeText" type="Label" parent="MenuOptions" unique_id=2137641399]
-offset_left = 112.0
-offset_top = 28.0
-offset_right = 328.0
-offset_bottom = 68.0
+offset_left = 80.0
+offset_top = 12.0
+offset_right = 296.0
+offset_bottom = 52.0
 text = "Resume Game"
 label_settings = SubResource("LabelSettings_dadan")
 
 [node name="ResetLevelButton" type="TouchScreenButton" parent="MenuOptions" unique_id=174531796]
-position = Vector2(0, 120)
-scale = Vector2(3, 3)
+position = Vector2(0, 80)
+scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_d7po0")
 texture_pressed = SubResource("AtlasTexture_tgy2g")
 shape = SubResource("RectangleShape2D_qxc5f")
 action = "reset_level"
 
 [node name="ResetText" type="Label" parent="MenuOptions" unique_id=1407245674]
-offset_left = 112.0
-offset_top = 148.0
-offset_right = 308.0
-offset_bottom = 188.0
+offset_left = 80.0
+offset_top = 92.0
+offset_right = 276.0
+offset_bottom = 132.0
 text = "Reset Level"
 label_settings = SubResource("LabelSettings_kvkuv")
 
-[node name="QuitGameButton" type="TouchScreenButton" parent="MenuOptions" unique_id=296861473]
+[node name="LevelSelectButton" type="TouchScreenButton" parent="MenuOptions" unique_id=1528535225]
+position = Vector2(0, 160)
+scale = Vector2(2, 2)
+texture_normal = SubResource("AtlasTexture_hdkeg")
+texture_pressed = SubResource("AtlasTexture_taxb1")
+shape = SubResource("RectangleShape2D_h54ie")
+action = "level_select"
+
+[node name="LevelSelectText" type="Label" parent="MenuOptions" unique_id=1918124911]
+offset_left = 80.0
+offset_top = 172.0
+offset_right = 288.0
+offset_bottom = 212.0
+text = "Level Select"
+label_settings = SubResource("LabelSettings_d7po0")
+
+[node name="MainMenuButton" type="TouchScreenButton" parent="MenuOptions" unique_id=1817372974]
 position = Vector2(0, 240)
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
+texture_normal = SubResource("AtlasTexture_3l3h0")
+texture_pressed = SubResource("AtlasTexture_uynk4")
+shape = SubResource("RectangleShape2D_55hg2")
+action = "title_screen"
+
+[node name="MainMenuText" type="Label" parent="MenuOptions" unique_id=2128873632]
+offset_left = 80.0
+offset_top = 252.0
+offset_right = 396.0
+offset_bottom = 292.0
+text = "Quit to Title Screen"
+label_settings = SubResource("LabelSettings_tgy2g")
+
+[node name="QuitGameButton" type="TouchScreenButton" parent="MenuOptions" unique_id=296861473]
+position = Vector2(0, 320)
+scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_1lvdy")
 texture_pressed = SubResource("AtlasTexture_6nmhk")
 shape = SubResource("RectangleShape2D_hdkeg")
 action = "quit_game"
 
 [node name="QuitText" type="Label" parent="MenuOptions" unique_id=1392933439]
-offset_left = 112.0
-offset_top = 268.0
-offset_right = 268.0
-offset_bottom = 308.0
+offset_left = 80.0
+offset_top = 332.0
+offset_right = 236.0
+offset_bottom = 372.0
 text = "Quit Game"
 label_settings = SubResource("LabelSettings_48c7y")
 

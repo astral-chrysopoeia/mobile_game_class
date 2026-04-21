@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Game for Class"
-run/main_scene="uid://bmwgxd24b0w8g"
+run/main_scene="uid://l38tlmitqvo7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -65,18 +65,43 @@ pause={
 }
 reset_level={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
-]
+"events": []
 }
 quit_game={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":81,"key_label":0,"unicode":113,"location":0,"echo":false,"script":null)
-]
+"events": []
 }
 swap_controls={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"location":0,"echo":false,"script":null)
-]
+"events": []
+}
+start_game={
+"deadzone": 0.2,
+"events": []
+}
+level_select={
+"deadzone": 0.2,
+"events": []
+}
+title_screen={
+"deadzone": 0.2,
+"events": []
+}
+level_one={
+"deadzone": 0.2,
+"events": []
+}
+level_two={
+"deadzone": 0.2,
+"events": []
+}
+level_three={
+"deadzone": 0.2,
+"events": []
+}
+level_four={
+"deadzone": 0.2,
+"events": []
 }
 
 [input_devices]

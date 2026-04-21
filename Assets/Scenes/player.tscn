@@ -183,7 +183,7 @@ position_smoothing_speed = 10.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D" unique_id=2026174620]
 
-[node name="ColorRect" type="ColorRect" parent="Camera2D/CanvasLayer" unique_id=1031478568]
+[node name="ScreenSize" type="ColorRect" parent="Camera2D/CanvasLayer" unique_id=1031478568]
 visible = false
 offset_right = 1372.0
 offset_bottom = 618.0

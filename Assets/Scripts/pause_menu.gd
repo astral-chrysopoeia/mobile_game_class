@@ -23,6 +23,14 @@ func _input(event: InputEvent) -> void:
 			gameplay_manager.to_area(gameplay_manager.current_level)
 			visible = false
 			get_tree().paused = false
+	if event.is_action_pressed("level_select"):
+		if get_tree().paused:
+			get_tree().paused = false
+			get_tree().change_scene_to_file("res://Assets/Scenes/level_select_screen.tscn")
+	if event.is_action_pressed("title_screen"):
+		if get_tree().paused:
+			get_tree().paused = false
+			get_tree().change_scene_to_file("res://Assets/Scenes/title_screen.tscn")
 	if event.is_action_pressed("quit_game"):
 		if get_tree().paused:
 			get_tree().quit()
