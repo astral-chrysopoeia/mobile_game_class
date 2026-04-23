@@ -7,9 +7,10 @@ var spawn_pos: Vector2 = Vector2.ZERO
 var is_paused : bool = false
 var current_level : String
 
-@export var start_level := "tutorial_level"
+var start_level
 
 func _ready():
+	start_level = Globals.start_level
 	to_area(start_level)
 	current_level = start_level
 
